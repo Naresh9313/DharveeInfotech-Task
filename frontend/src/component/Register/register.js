@@ -19,7 +19,8 @@ function Register() {
     e.preventDefault();
     try {
       // await axios.post('http://localhost:5000/register', form);
-      axios.post("https://your-backend-name.vercel.app/register", form);
+      // axios.post("https://your-backend-name.vercel.app/register", form);
+      axios.post("https://dharvee-infotech-task-x86e.vercel.app/register", form);
 
       localStorage.setItem("user", JSON.stringify({ username: form.username }));
 
