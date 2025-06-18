@@ -18,7 +18,8 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/register', form);
+      // await axios.post('http://localhost:5000/register', form);
+      axios.post("https://your-backend-name.vercel.app/register", form);
 
       localStorage.setItem("user", JSON.stringify({ username: form.username }));
 
