@@ -11,11 +11,16 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cors({
-    origin: ['https://dharvee-infotech-task.vercel.app','http://localhost:3000'], // Allow only your frontend domain
-    credentials: true, // Allow cookies if needed
+    origin: [
+      'https://dharvee-infotech-task.vercel.app', // main prod domain
+      'http://localhost:3000',                    // local dev
+      'https://dharvee-infotech-task-x86e-git-main-nareshs-projects-6e7b16cf.vercel.app' // preview deployment
+    ],
+    credentials: true,
     methods: 'GET,POST,PUT,DELETE,OPTIONS',
     allowedHeaders: 'Content-Type,Authorization',
   }));
+  
 app.use('',allRoutes);
     
 mongoose.connect(process.env.MONGO_URL, {
