@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './login.css';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 
 function Login() {
   const [form, setForm] = useState({
@@ -71,6 +71,10 @@ function Login() {
           required
         />
         <button type="submit" className="login-button">Login</button>
+
+        <p className="form-link">
+          Not registered yet? <Link to="/register">Register here</Link>
+        </p>
       </form>
     </div>
   );

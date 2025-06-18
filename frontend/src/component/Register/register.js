@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './register.css';
 
 function Register() {
@@ -33,13 +33,52 @@ function Register() {
     <div className="register-container">
       <form onSubmit={handleSubmit} className="register-form">
         <h2>Register</h2>
-        <input className="form-input" placeholder="UserName" onChange={(e) => setForm({ ...form, username: e.target.value })} required />
-        <input className="form-input" type="password" placeholder="Password" onChange={(e) => setForm({ ...form, password: e.target.value })} required />
-        <input className="form-input" type="number" placeholder="Mobile Number" onChange={(e) => setForm({ ...form, mobile: e.target.value })} required />
-        <input className="form-input" type="text" placeholder="Employee Code" onChange={(e) => setForm({ ...form, employeecode: e.target.value })} required />
-        <input className="form-input" type="date" placeholder="Birth Date" onChange={(e) => setForm({ ...form, birthdate: e.target.value })} required />
-        <input className="form-input" type="email" placeholder="Email" onChange={(e) => setForm({ ...form, emailid: e.target.value })} required />
+        <input
+          className="form-input"
+          placeholder="UserName"
+          onChange={(e) => setForm({ ...form, username: e.target.value })}
+          required
+        />
+        <input
+          className="form-input"
+          type="password"
+          placeholder="Password"
+          onChange={(e) => setForm({ ...form, password: e.target.value })}
+          required
+        />
+        <input
+          className="form-input"
+          type="number"
+          placeholder="Mobile Number"
+          onChange={(e) => setForm({ ...form, mobile: e.target.value })}
+          required
+        />
+        <input
+          className="form-input"
+          type="text"
+          placeholder="Employee Code"
+          onChange={(e) => setForm({ ...form, employeecode: e.target.value })}
+          required
+        />
+        <input
+          className="form-input"
+          type="date"
+          placeholder="Birth Date"
+          onChange={(e) => setForm({ ...form, birthdate: e.target.value })}
+          required
+        />
+        <input
+          className="form-input"
+          type="email"
+          placeholder="Email"
+          onChange={(e) => setForm({ ...form, emailid: e.target.value })}
+          required
+        />
         <button type="submit" className="submit-button">Register</button>
+
+        <p className="form-link">
+          Already registered? <Link to="/login">Login here</Link>
+        </p>
       </form>
     </div>
   );
