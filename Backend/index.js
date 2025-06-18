@@ -10,12 +10,12 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-const corsOptions ={
-    origin:'http://localhost:3000', 
-    credentials:true,            
-    optionSuccessStatus:200
-}
-app.use(cors(corsOptions));
+app.use(cors({
+    origin: ['http://localhost:3000'], // Allow only your frontend domain
+    credentials: true, // Allow cookies if needed
+    methods: 'GET,POST,PUT,DELETE,OPTIONS',
+    allowedHeaders: 'Content-Type,Authorization',
+  }));
 app.use('',allRoutes);
     
 mongoose.connect(process.env.MONGO_URL, {
