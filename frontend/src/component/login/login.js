@@ -15,7 +15,7 @@ function Login() {
     e.preventDefault();
     setError('');
     try {
-      const response = axios.post("https://your-backend-name.vercel.app/register", form, {
+      const response = axios.post("https://your-backend-name.vercel.app/login", form, {
         headers: {
           'Content-Type': 'application/json'
         },
