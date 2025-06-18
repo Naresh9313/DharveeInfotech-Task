@@ -11,7 +11,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cors({
-    origin: ['http://localhost:3000'], // Allow only your frontend domain
+    origin: ['https://dharvee-infotech-task.vercel.app','http://localhost:3000'], // Allow only your frontend domain
     credentials: true, // Allow cookies if needed
     methods: 'GET,POST,PUT,DELETE,OPTIONS',
     allowedHeaders: 'Content-Type,Authorization',
